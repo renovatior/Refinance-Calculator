@@ -64,6 +64,7 @@ void refinance::calculatediff()
     double current_cost,future_cost;
     //if keep doing the current loan
     const double current_month = getMonthlyPayment(m_current_rate, m_current_term, balance);
+    m_current_monthly = current_month;
     current_cost = current_month * m_current_term;
     double payed_balance = 0;
     double month_interest = 0;
@@ -75,6 +76,7 @@ void refinance::calculatediff()
         month_interest = initial_balance * m_current_rate / 1200.;
     }
     const double future_month = getMonthlyPayment(m_future_rate, m_future_term, balance - payed_balance);
+    m_future_monthly = future_month;
     future_cost =  future_month * m_future_term + m_already_term * current_month + month_interest;
 
     m_diff = current_cost - future_cost;

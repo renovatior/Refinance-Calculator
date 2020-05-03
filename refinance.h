@@ -8,6 +8,7 @@ class refinance
 {
 public:
     refinance(){}
+    //setter
     inline void setCurrentRate(double _rate)
     {
         m_current_rate = _rate;
@@ -42,6 +43,14 @@ public:
     {
         return m_diff;
     }
+    inline double getCurrentMonthly()
+    {
+        return m_current_monthly;
+    }
+    inline double getFutureMonthly()
+    {
+        return m_future_monthly;
+    }
 
     void run();
 private:
@@ -50,6 +59,8 @@ private:
     double m_future_rate = 0;
     double m_fee = 0;
     double m_diff = 0;
+    double m_current_monthly = 0;
+    double m_future_monthly = 0;
     unsigned int m_current_term = 360;
     unsigned int m_future_term = 360;
     unsigned int m_already_term = 0;

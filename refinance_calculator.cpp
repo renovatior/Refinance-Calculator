@@ -136,17 +136,33 @@ void Refinance_Calculator::on_Calculate_clicked()
         QString showtext;
         if (diff > 0)
         {
-           showtext = "Refinance will save you " + QString::number(diff) + " dollars!";
+           showtext = "Refinance will save you " + QString::number(diff) + " $!";
            showResult(showtext);
         }
         else if (diff < 0)
         {
-            showtext = "Refinance will lose you " + QString::number(-diff) + " dollars!";
+            showtext = "Refinance will lose you " + QString::number(-diff) + " $!";
             showResult(showtext);
         }
         else
         {
             showtext = "No Need to refinance, they are the same!";
+            showResult(showtext);
+        }
+
+        if (ref->getCurrentMonthly() > ref->getFutureMonthly())
+        {
+            showtext = "Your monthly payment will reduce from " + QString::number(ref->getCurrentMonthly()) + " $ to " + QString::number(ref->getFutureMonthly()) + " $.";
+            showResult(showtext);
+        }
+        else if ((ref->getCurrentMonthly() < ref->getFutureMonthly()))
+        {
+            showtext = "Your monthly payment will increase from " + QString::number(ref->getCurrentMonthly()) + " $ to " + QString::number(ref->getFutureMonthly()) + " $.";
+            showResult(showtext);
+        }
+        else
+        {
+            showtext = "Your monthly payment will remain the same as " + QString::number(ref->getCurrentMonthly()) + " $.";
             showResult(showtext);
         }
 
