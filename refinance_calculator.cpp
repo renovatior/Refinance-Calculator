@@ -16,7 +16,7 @@ Refinance_Calculator::~Refinance_Calculator()
 
 void Refinance_Calculator::showResult(QString text)
 {
-    ui->result->setText(text);
+    ui->result->append(text);
 }
 
 
