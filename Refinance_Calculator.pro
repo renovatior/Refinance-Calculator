@@ -29,14 +29,23 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         refinance_calculator.cpp \
-    refinance.cpp
+    refinance.cpp \
+    armotization.cpp
+
+
 
 HEADERS += \
         refinance_calculator.h \
-    refinance.h
+    refinance.h \
+    armotization.h
+
+
 
 FORMS += \
-        refinance_calculator.ui
+        refinance_calculator.ui \
+    armotization.ui
+
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

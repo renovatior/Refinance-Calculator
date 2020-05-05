@@ -204,6 +204,7 @@ Makefile: ../Refinance_Calculator.pro E:/QT/5.11.2/mingw53_32/mkspecs/win32-g++/
 		E:/QT/5.11.2/mingw53_32/mkspecs/features/qt_config.prf \
 		E:/QT/5.11.2/mingw53_32/mkspecs/win32-g++/qmake.conf \
 		E:/QT/5.11.2/mingw53_32/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		E:/QT/5.11.2/mingw53_32/mkspecs/features/exclusive_builds.prf \
 		E:/QT/5.11.2/mingw53_32/mkspecs/features/toolchain.prf \
 		E:/QT/5.11.2/mingw53_32/mkspecs/features/default_pre.prf \
@@ -375,6 +376,7 @@ E:/QT/5.11.2/mingw53_32/mkspecs/features/qt_functions.prf:
 E:/QT/5.11.2/mingw53_32/mkspecs/features/qt_config.prf:
 E:/QT/5.11.2/mingw53_32/mkspecs/win32-g++/qmake.conf:
 E:/QT/5.11.2/mingw53_32/mkspecs/features/spec_post.prf:
+.qmake.stash:
 E:/QT/5.11.2/mingw53_32/mkspecs/features/exclusive_builds.prf:
 E:/QT/5.11.2/mingw53_32/mkspecs/features/toolchain.prf:
 E:/QT/5.11.2/mingw53_32/mkspecs/features/default_pre.prf:

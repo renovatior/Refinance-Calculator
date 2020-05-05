@@ -51,10 +51,23 @@ public:
     {
         return m_future_monthly;
     }
+    inline unsigned int getFutureTerm()
+    {
+        return m_future_term;
+    }
+    inline double getFutureRate()
+    {
+        return m_future_rate;
+    }
+    inline double getCurrentBalance()
+    {
+        return current_balance;
+    }
 
     void run();
 private:
     double balance = 0;
+    double current_balance = 0;
     double m_current_rate = 0;
     double m_future_rate = 0;
     double m_fee = 0;

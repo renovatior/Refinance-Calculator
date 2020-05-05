@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Refinance_Calculator_t {
-    QByteArrayData data[11];
-    char stringdata0[197];
+    QByteArrayData data[12];
+    char stringdata0[220];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -41,14 +41,15 @@ QT_MOC_LITERAL(6, 89, 19), // "on_CTerm_textEdited"
 QT_MOC_LITERAL(7, 109, 19), // "on_RTerm_textEdited"
 QT_MOC_LITERAL(8, 129, 23), // "on_PaidTimes_textEdited"
 QT_MOC_LITERAL(9, 153, 22), // "on_ExtraFee_textEdited"
-QT_MOC_LITERAL(10, 176, 20) // "on_Calculate_clicked"
+QT_MOC_LITERAL(10, 176, 20), // "on_Calculate_clicked"
+QT_MOC_LITERAL(11, 197, 22) // "on_Calculate_2_clicked"
 
     },
     "Refinance_Calculator\0on_Balance_textEdited\0"
     "\0arg1\0on_CRate_textEdited\0on_RRate_textEdited\0"
     "on_CTerm_textEdited\0on_RTerm_textEdited\0"
     "on_PaidTimes_textEdited\0on_ExtraFee_textEdited\0"
-    "on_Calculate_clicked"
+    "on_Calculate_clicked\0on_Calculate_2_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -58,7 +59,7 @@ static const uint qt_meta_data_Refinance_Calculator[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -66,14 +67,15 @@ static const uint qt_meta_data_Refinance_Calculator[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   54,    2, 0x08 /* Private */,
-       4,    1,   57,    2, 0x08 /* Private */,
-       5,    1,   60,    2, 0x08 /* Private */,
-       6,    1,   63,    2, 0x08 /* Private */,
-       7,    1,   66,    2, 0x08 /* Private */,
-       8,    1,   69,    2, 0x08 /* Private */,
-       9,    1,   72,    2, 0x08 /* Private */,
-      10,    0,   75,    2, 0x08 /* Private */,
+       1,    1,   59,    2, 0x08 /* Private */,
+       4,    1,   62,    2, 0x08 /* Private */,
+       5,    1,   65,    2, 0x08 /* Private */,
+       6,    1,   68,    2, 0x08 /* Private */,
+       7,    1,   71,    2, 0x08 /* Private */,
+       8,    1,   74,    2, 0x08 /* Private */,
+       9,    1,   77,    2, 0x08 /* Private */,
+      10,    0,   80,    2, 0x08 /* Private */,
+      11,    0,   81,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -83,6 +85,7 @@ static const uint qt_meta_data_Refinance_Calculator[] = {
     QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    3,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -102,6 +105,7 @@ void Refinance_Calculator::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         case 5: _t->on_PaidTimes_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 6: _t->on_ExtraFee_textEdited((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 7: _t->on_Calculate_clicked(); break;
+        case 8: _t->on_Calculate_2_clicked(); break;
         default: ;
         }
     }
@@ -132,13 +136,13 @@ int Refinance_Calculator::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 9;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 9)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 8;
+        _id -= 9;
     }
     return _id;
 }

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "refinance.h"
+#include "armotization.h"
 
 namespace Ui {
 class Refinance_Calculator;
@@ -20,8 +21,6 @@ private slots:
 
     void on_Balance_textEdited(const QString &arg1);
 
-
-
     void on_CRate_textEdited(const QString &arg1);
 
     void on_RRate_textEdited(const QString &arg1);
@@ -36,6 +35,8 @@ private slots:
 
     void on_Calculate_clicked();
 
+    void on_Calculate_2_clicked();
+
 private:
     Ui::Refinance_Calculator *ui;
 
@@ -47,11 +48,14 @@ private:
     bool m_rterm = false;
     bool m_ptimes = false;
     bool m_fee = false;
+    bool m_finish_calculate = false;
 
     refinance* ref = new refinance();
 
     void showResult(QString text);
     bool getdoable();
+
+    armotization *armo;
 };
 
 #endif // REFINANCE_CALCULATOR_H

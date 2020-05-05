@@ -2,6 +2,7 @@
 #include "ui_refinance_calculator.h"
 
 
+
 Refinance_Calculator::Refinance_Calculator(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Refinance_Calculator)
@@ -132,6 +133,7 @@ void Refinance_Calculator::on_Calculate_clicked()
     if (getdoable())
     {
         ref->run();
+        m_finish_calculate = true;
         double diff = ref->getdiff();
         QString showtext;
         if (diff > 0)
@@ -171,4 +173,28 @@ void Refinance_Calculator::on_Calculate_clicked()
     {
         showResult("Invalid Input. Please input correct number!!");
     }
+}
+
+void Refinance_Calculator::on_Calculate_2_clicked()
+{
+//    armotization armo;
+//    armo.setModal(true);
+//    armo.exec();
+//    if (armo != nullptr)
+//    {
+//        armo->accept();
+//    }
+    if (m_finish_calculate)
+    {
+        armo = new armotization(this);
+        armo->setWindowTitle("Amortization Table");
+        armo->run(ref);
+        armo->show();
+    }
+    else
+    {
+        showResult("Press Calculate first!");
+    }
+
+
 }

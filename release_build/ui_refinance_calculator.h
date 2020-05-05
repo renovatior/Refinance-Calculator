@@ -51,6 +51,7 @@ public:
     QLabel *label_14;
     QLabel *label_15;
     QTextEdit *result;
+    QPushButton *Calculate_2;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -59,12 +60,12 @@ public:
     {
         if (Refinance_Calculator->objectName().isEmpty())
             Refinance_Calculator->setObjectName(QStringLiteral("Refinance_Calculator"));
-        Refinance_Calculator->resize(688, 436);
+        Refinance_Calculator->resize(688, 434);
         centralWidget = new QWidget(Refinance_Calculator);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         Calculate = new QPushButton(centralWidget);
         Calculate->setObjectName(QStringLiteral("Calculate"));
-        Calculate->setGeometry(QRect(260, 190, 141, 31));
+        Calculate->setGeometry(QRect(140, 190, 141, 31));
         QFont font;
         font.setFamily(QStringLiteral("Bodoni MT Condensed"));
         font.setPointSize(11);
@@ -152,6 +153,10 @@ public:
         result = new QTextEdit(centralWidget);
         result->setObjectName(QStringLiteral("result"));
         result->setGeometry(QRect(30, 250, 621, 121));
+        Calculate_2 = new QPushButton(centralWidget);
+        Calculate_2->setObjectName(QStringLiteral("Calculate_2"));
+        Calculate_2->setGeometry(QRect(380, 190, 141, 31));
+        Calculate_2->setFont(font);
         Refinance_Calculator->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(Refinance_Calculator);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -189,6 +194,7 @@ public:
         label_13->setText(QApplication::translate("Refinance_Calculator", "Extra Fee For Refinance:", nullptr));
         label_14->setText(QApplication::translate("Refinance_Calculator", "$", nullptr));
         label_15->setText(QApplication::translate("Refinance_Calculator", "Result:", nullptr));
+        Calculate_2->setText(QApplication::translate("Refinance_Calculator", "Show Amortization Table", nullptr));
     } // retranslateUi
 
 };

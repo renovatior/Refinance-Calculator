@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>688</width>
-    <height>436</height>
+    <height>434</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <widget class="QPushButton" name="Calculate">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>140</x>
       <y>190</y>
       <width>141</width>
       <height>31</height>
@@ -360,6 +360,28 @@
       <width>621</width>
       <height>121</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Calculate_2">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>190</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bodoni MT Condensed</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <italic>true</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Show Amortization Table</string>
     </property>
    </widget>
   </widget>
