@@ -10,6 +10,18 @@ double refinance::getMonthlyPayment(double rate, unsigned int term, double balan
 
 }
 
+double refinance::getRemainBalance(double rate, unsigned int term, double monthly, double init_balance)
+{
+    double t_balance = init_balance;
+    for (unsigned int it = 0; it < term; it ++)
+    {
+        double interest = t_balance * rate / 1200.;
+        double principal = monthly - interest;
+        t_balance -= principal;
+    }
+    return t_balance;
+}
+
 void  refinance::askInput()
 {
    std::cout << "What is your initial balance for your current loan:" << endl;
@@ -65,21 +77,41 @@ void refinance::calculatediff()
     //if keep doing the current loan
     const double current_month = getMonthlyPayment(m_current_rate, m_current_term, balance);
     m_current_monthly = current_month;
-    current_cost = current_month * m_current_term;
     double payed_balance = 0;
     double month_interest = 0;
     double initial_balance = balance;
+    double each_payed_balance = 0;
     for (unsigned int time = 0; time < m_already_term; time ++)
     {
-        payed_balance += current_month - initial_balance * m_current_rate / 1200.;
-        initial_balance -= payed_balance;
+        each_payed_balance = current_month - initial_balance * m_current_rate / 1200.;
+        payed_balance += each_payed_balance;
+        initial_balance -= each_payed_balance;
         month_interest = initial_balance * m_current_rate / 1200.;
     }
     current_balance = balance - payed_balance;
     const double future_month = getMonthlyPayment(m_future_rate, m_future_term, current_balance);
     m_future_monthly = future_month;
-    future_cost =  future_month * m_future_term + m_already_term * current_month + month_interest;
 
+    const unsigned int current_house_term = m_already_term + m_house_sellterm;
+    if (m_plan_sell and (current_house_term < m_current_term))
+    {
+        double remain = getRemainBalance(m_current_rate, current_house_term, m_current_monthly, balance);
+        current_cost = m_current_monthly * current_house_term + remain;
+    }
+    else
+    {
+        current_cost = m_current_monthly * m_current_term;
+    }
+
+    if(m_plan_sell and m_house_sellterm < m_future_term)
+    {
+        double remain = getRemainBalance(m_future_rate, m_house_sellterm, m_future_monthly, current_balance);
+        future_cost =  remain + m_future_monthly * m_house_sellterm + m_already_term * current_month + month_interest;
+    }
+    else
+    {
+        future_cost =  m_future_monthly * m_future_term + m_already_term * current_month + month_interest;
+    }
     m_diff = current_cost - future_cost;
 
 }

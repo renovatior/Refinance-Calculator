@@ -37,6 +37,12 @@ private slots:
 
     void on_Calculate_2_clicked();
 
+    void on_House_Sold_textChanged(const QString &arg1);
+
+    void on_radioButton_clicked();
+
+    void on_radioButton_2_clicked();
+
 private:
     Ui::Refinance_Calculator *ui;
 
@@ -49,6 +55,7 @@ private:
     bool m_ptimes = false;
     bool m_fee = false;
     bool m_finish_calculate = false;
+
 
     refinance* ref = new refinance();
 

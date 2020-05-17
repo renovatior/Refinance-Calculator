@@ -123,6 +123,30 @@ void Refinance_Calculator::on_ExtraFee_textEdited(const QString &_ExtraFee)
     }
 }
 
+void Refinance_Calculator::on_House_Sold_textChanged(const QString &_housesoldmonth)
+{
+    unsigned int housesoldmonth = _housesoldmonth.toUInt();
+    if (housesoldmonth > 0)
+    {
+        //m_ptimes = true;
+        ref->setHose_SellTerm(housesoldmonth);
+    }
+    else
+    {
+        //m_ptimes = false;
+    }
+}
+
+void Refinance_Calculator::on_radioButton_clicked()
+{
+    ref->setPlan_Sell(true);
+}
+
+void Refinance_Calculator::on_radioButton_2_clicked()
+{
+    ref->setPlan_Sell(false);
+}
+
 bool Refinance_Calculator::getdoable()
 {
     return m_balance && m_crate && m_rrate && m_cterm && m_rterm && m_fee && m_ptimes;
@@ -198,3 +222,8 @@ void Refinance_Calculator::on_Calculate_2_clicked()
 
 
 }
+
+
+
+
+
